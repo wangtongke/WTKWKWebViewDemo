@@ -29,8 +29,8 @@ class ViewController: UIViewController {
         testTwo.backgroundColor = .black
         testTwo.frame = CGRect(x: 100, y: 350, width: 150, height: 35)
         testTwo.center.x = self.view.center.x
-        testTwo.setTitle("测试UIWebView", for: .normal)
-        testTwo.addTarget(self, action: #selector(goToUIWebView), for: .touchUpInside)
+        testTwo.setTitle("测试WKWebView", for: .normal)
+        testTwo.addTarget(self, action: #selector(goToWKWebView), for: .touchUpInside)
         self.view.addSubview(testTwo)
     }
     

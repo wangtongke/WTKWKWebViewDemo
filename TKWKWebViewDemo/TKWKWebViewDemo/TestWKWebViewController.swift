@@ -34,6 +34,13 @@ class TestWKWebViewController: UIViewController, WKNavigationDelegate, WKUIDeleg
         webView.uiDelegate = self
         webView.navigationDelegate = self
         self.view.addSubview(webView)
+        
+//       加载本地html
+        let path = Bundle.main.path(forResource: "test", ofType: "html") ?? ""
+        if let r = URL.init(string: path, relativeTo: URL.init(fileURLWithPath: Bundle.main.bundlePath)) {
+            let request = URLRequest(url: r)
+            self.webView.load(request)
+        }
     }
     /// 获取要注入js事件
     func getJSString() -> String {
