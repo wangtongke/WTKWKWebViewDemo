@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		F5D7B808242C5CEF00AFD173 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7B807242C5CEF00AFD173 /* AppDelegate.swift */; };
-		F5D7B80A242C5CEF00AFD173 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7B809242C5CEF00AFD173 /* SceneDelegate.swift */; };
 		F5D7B80C242C5CEF00AFD173 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7B80B242C5CEF00AFD173 /* ViewController.swift */; };
 		F5D7B80F242C5CEF00AFD173 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5D7B80D242C5CEF00AFD173 /* Main.storyboard */; };
 		F5D7B811242C5CF300AFD173 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5D7B810242C5CF300AFD173 /* Assets.xcassets */; };
 		F5D7B814242C5CF300AFD173 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5D7B812242C5CF300AFD173 /* LaunchScreen.storyboard */; };
 		F5D7B81F242C5CF300AFD173 /* TKWKWebViewDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7B81E242C5CF300AFD173 /* TKWKWebViewDemoTests.swift */; };
 		F5D7B82A242C5CF300AFD173 /* TKWKWebViewDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7B829242C5CF300AFD173 /* TKWKWebViewDemoUITests.swift */; };
+		F5D7B838242C765B00AFD173 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = F5D7B837242C765B00AFD173 /* test.html */; };
+		F5D7B83B242C7FE100AFD173 /* TestUIWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7B839242C7FE100AFD173 /* TestUIWebViewController.swift */; };
+		F5D7B841242C800C00AFD173 /* TestWKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7B83F242C800C00AFD173 /* TestWKWebViewController.swift */; };
+		F5D7B844242C977A00AFD173 /* jsMethod.js in Resources */ = {isa = PBXBuildFile; fileRef = F5D7B843242C977A00AFD173 /* jsMethod.js */; };
+		F5D7B846242C992300AFD173 /* TKWebMethodManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7B845242C992300AFD173 /* TKWebMethodManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +41,6 @@
 /* Begin PBXFileReference section */
 		F5D7B804242C5CEF00AFD173 /* TKWKWebViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKWKWebViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D7B807242C5CEF00AFD173 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F5D7B809242C5CEF00AFD173 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F5D7B80B242C5CEF00AFD173 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F5D7B80E242C5CEF00AFD173 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F5D7B810242C5CF300AFD173 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +52,11 @@
 		F5D7B825242C5CF300AFD173 /* TKWKWebViewDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TKWKWebViewDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D7B829242C5CF300AFD173 /* TKWKWebViewDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TKWKWebViewDemoUITests.swift; sourceTree = "<group>"; };
 		F5D7B82B242C5CF300AFD173 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5D7B837242C765B00AFD173 /* test.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
+		F5D7B839242C7FE100AFD173 /* TestUIWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUIWebViewController.swift; sourceTree = "<group>"; };
+		F5D7B83F242C800C00AFD173 /* TestWKWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWKWebViewController.swift; sourceTree = "<group>"; };
+		F5D7B843242C977A00AFD173 /* jsMethod.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jsMethod.js; sourceTree = "<group>"; };
+		F5D7B845242C992300AFD173 /* TKWebMethodManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TKWebMethodManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +108,16 @@
 			isa = PBXGroup;
 			children = (
 				F5D7B807242C5CEF00AFD173 /* AppDelegate.swift */,
-				F5D7B809242C5CEF00AFD173 /* SceneDelegate.swift */,
 				F5D7B80B242C5CEF00AFD173 /* ViewController.swift */,
+				F5D7B839242C7FE100AFD173 /* TestUIWebViewController.swift */,
+				F5D7B83F242C800C00AFD173 /* TestWKWebViewController.swift */,
+				F5D7B845242C992300AFD173 /* TKWebMethodManager.swift */,
+				F5D7B843242C977A00AFD173 /* jsMethod.js */,
 				F5D7B80D242C5CEF00AFD173 /* Main.storyboard */,
 				F5D7B810242C5CF300AFD173 /* Assets.xcassets */,
 				F5D7B812242C5CF300AFD173 /* LaunchScreen.storyboard */,
 				F5D7B815242C5CF300AFD173 /* Info.plist */,
+				F5D7B837242C765B00AFD173 /* test.html */,
 			);
 			path = TKWKWebViewDemo;
 			sourceTree = "<group>";
@@ -232,6 +244,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5D7B838242C765B00AFD173 /* test.html in Resources */,
+				F5D7B844242C977A00AFD173 /* jsMethod.js in Resources */,
 				F5D7B814242C5CF300AFD173 /* LaunchScreen.storyboard in Resources */,
 				F5D7B811242C5CF300AFD173 /* Assets.xcassets in Resources */,
 				F5D7B80F242C5CEF00AFD173 /* Main.storyboard in Resources */,
@@ -259,9 +273,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5D7B83B242C7FE100AFD173 /* TestUIWebViewController.swift in Sources */,
 				F5D7B80C242C5CEF00AFD173 /* ViewController.swift in Sources */,
 				F5D7B808242C5CEF00AFD173 /* AppDelegate.swift in Sources */,
-				F5D7B80A242C5CEF00AFD173 /* SceneDelegate.swift in Sources */,
+				F5D7B846242C992300AFD173 /* TKWebMethodManager.swift in Sources */,
+				F5D7B841242C800C00AFD173 /* TestWKWebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +453,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7A692X8NVA;
 				INFOPLIST_FILE = TKWKWebViewDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,6 +472,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7A692X8NVA;
 				INFOPLIST_FILE = TKWKWebViewDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

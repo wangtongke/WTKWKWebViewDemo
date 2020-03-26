@@ -12,7 +12,35 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        configView()
+    }
+    
+    func configView() {
+        view.backgroundColor = .white
+        let testOne = UIButton.init(type: .custom)
+        testOne.backgroundColor = .black
+        testOne.frame = CGRect(x: 100, y: 200, width: 150, height: 40)
+        testOne.center.x = self.view.center.x
+        testOne.setTitle("测试UIWebView", for: .normal)
+        testOne.addTarget(self, action: #selector(goToUIWebView), for: .touchUpInside)
+        self.view.addSubview(testOne)
+        
+        let testTwo = UIButton.init(type: .custom)
+        testTwo.backgroundColor = .black
+        testTwo.frame = CGRect(x: 100, y: 350, width: 150, height: 35)
+        testTwo.center.x = self.view.center.x
+        testTwo.setTitle("测试UIWebView", for: .normal)
+        testTwo.addTarget(self, action: #selector(goToUIWebView), for: .touchUpInside)
+        self.view.addSubview(testTwo)
+    }
+    
+    @objc func goToUIWebView() {
+        let vc = TestUIWebViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    @objc func goToWKWebView() {
+        let vc = TestWKWebViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 
 

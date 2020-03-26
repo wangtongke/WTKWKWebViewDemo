@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>事件测试页</title>
+  <style>
+    body {
+      padding: 20px 0;
+    }
+
+    a {
+      color: steelblue;
+      display: block;
+      background-color: white;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+      text-decoration: none;
+      text-align: center;
+    }
+  </style>
+  <script>
+    function getUserPhone() {
+        alert(TKApp.getUserPhone());
+    }
+    function showShare() {
+        var param = {title: "分享标题", desc: "desc", url: "https://www.baidu.com"};
+        TKApp.showShare(JSON.stringify(param), "shareCallBack");
+    }
+    function shareCallBack(flag) {
+        alert("分享" + flag);
+    }
+
+  </script>
+</head>
+
+<body>
+  <a href="javascript:getUserPhone();">获取用户手机号</a>
+  <a href="javascript:showShare();">显示分享</a>
+</body>
+
+</html>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!---->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--  <title>事件测试页</title>-->
+<!--  <style>-->
+<!--    body {-->
+<!--      padding: 20px 0;-->
+<!--    }-->
+<!---->
+<!--    a {-->
+<!--      color: steelblue;-->
+<!--      display: block;-->
+<!--      background-color: white;-->
+<!--      padding: 10px;-->
+<!--      border: 1px solid #ccc;-->
+<!--      margin-top: 10px;-->
+<!--      text-decoration: none;-->
+<!--      text-align: center;-->
+<!--    }-->
+<!--  </style>-->
+<!--  <script>-->
+<!--    function openApp() {-->
+<!--      window.location.href = "cos1://open?type=10000&url=" + encodeURIComponent(window.location.href)-->
+<!--    }-->
+<!--    function showShare() {-->
+<!--      TKApp.shareTo({ title: "share" }, function (success) {-->
+<!--        alert(success)-->
+<!--      })-->
+<!--    }-->
+<!---->
+<!--    function getUserPhone() {-->
+<!--      // window.webkit.messageHandlers.getUserPhone.postMessage({"images": ""});;-->
+<!--      TKApp.getUserPhone()-->
+<!--    }-->
+<!---->
+<!--    function showLogin() {-->
+<!--        if (window.TKApp) {-->
+<!--            TKApp.showLogin("loginCallBack");-->
+<!--        } else if (window.OSWKApp) {-->
+<!--          // window.prompt("openPage",xxx); //(ios新版本wkwebview)-->
+<!--            window.prompt("showLogin", "loginCallBack");-->
+<!--        } else {-->
+<!--            // 外部打开-->
+<!--            alert("外部打开的");-->
+<!--        }-->
+<!--    }-->
+<!---->
+<!--    function loginCallBack(a) {-->
+<!--      alert("字串回调-" + a)-->
+<!--    }-->
+<!---->
+<!--    function showLogin2() {-->
+<!--      // TKApp.showLogin("loginCallBack")-->
+<!--      TKApp.getUserInfo111()-->
+<!--    }-->
+<!--    var TKApp = {-->
+<!--      getUserInfo111 : function () {-->
+<!--        alert(arguments.callee.name)-->
+<!--      }-->
+<!--    }-->
+<!--    function openPage() {-->
+<!--      TKApp.openPage({ type: 10000, url: "http://www.baidu.com" })-->
+<!--    }-->
+<!--    function openCoupon() {-->
+<!--        var value = JSON.stringify({"typeId":2,"couponId":"1"});-->
+<!--        var openStr = JSON.stringify({"type": 28, "value": value});-->
+<!--        TKApp.openPage(openStr)-->
+<!--    }-->
+<!--    function openBaidu() {-->
+<!--        window.location.href = "https://www.baidu.com"-->
+<!--    }-->
+<!--    window.appOnload = function () {-->
+<!--      TKApp.viewDidShow = function () {-->
+<!--        console.log("viewDidShow")-->
+<!--        document.body.style.backgroundColor = "red"-->
+<!--      }-->
+<!--    }-->
+<!---->
+<!--    let setElectFenceDatas = function (fenceName,fenceId,diastance, lng, lat, notifyPhone, notifyType, status) {-->
+<!--        alert(fenceName + fenceId)-->
+<!--    }-->
+<!---->
+<!--    function imgCallBack(param) {-->
+<!--      TKApp.openPage({ type: 10000, url: "http://www.baidu.com" })-->
+<!--      console.log(param)-->
+<!--    }-->
+<!---->
+<!--  </script>-->
+<!--</head>-->
+<!---->
+<!--<body>-->
+<!--  <a href="javascript:openApp();">这是一个正经的网页</a>-->
+<!--  <a href="javascript:getUserPhone();">获取用户手机号</a>-->
+<!--  <a href="javascript:showShare();">显示分享</a>-->
+<!--  <a href="javascript:showLogin();">显示登录</a>-->
+<!--  <a href="javascript:showLogin2();">显示登录(字串回调)</a>-->
+<!--  <a href="javascript:openPage();">打开页面</a>-->
+<!--  <a href="javascript:openCoupon();">打开首保券</a>-->
+<!--  <a href="javascript:openBaidu();">打开百度</a>-->
+<!--</body>-->
+<!---->
+<!--</html>-->
