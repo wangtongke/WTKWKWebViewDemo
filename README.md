@@ -1,5 +1,5 @@
 # WTKWKWebViewDemo
-###UIWebView无缝转WKWebView
+### UIWebView无缝转WKWebView
 
 
 `WKWebview`与`UIWebview`在原生交互方面最大差别就是交互方式差异很大。先来看一下这些差异！
@@ -75,5 +75,5 @@ func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt:
  在这个代理方法中来处理H5的交互事件！
  这个方法H5可以传过来两个字符串参数，第一个必传，第二个为可选类型。我们可以定义第一个为方法名，第二个为H5要传过来的参数。`completionHandler`回调一个`String?`类型，在H5里面相当于此方法的返回值。
  
- **需要注意的是，此方法接受的参数和返回值都是字符串，**如果之前H5用Bool或者Int接受的，我们在注入的JS方法里面可以自己修改成相应的类型。
+ **需要注意的是，此方法接受的参数和返回值都是字符串，** 如果之前H5用Bool或者Int接受的，我们在注入的JS方法里面可以自己修改成相应的类型。
 
