@@ -238,7 +238,7 @@
     NSString * firName = arr.firstObject;
     self.methodList[firName] = methodStr;
     code = [NSString stringWithFormat:@"%@.%@ = function(%@) {var secParam = JSON.stringify([%@]); ", key, firName, param, param];
-    if ([type isEqualToString:@"d"] || [type isEqualToString:@"q"] || [type isEqualToString:@"f"]) {
+    if ([type isEqualToString:@"d"] || [type isEqualToString:@"q"] || [type isEqualToString:@"f"] || [type isEqualToString:@"i"] || [type isEqualToString:@"l"]) {
         code = [NSString stringWithFormat:@"%@ return parseFloat(window.prompt(\"%@\", secParam))", code, firName];
     } else {
         code = [NSString stringWithFormat:@"%@ return window.prompt(\"%@\", secParam)", code, firName];
