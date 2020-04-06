@@ -34,7 +34,7 @@ class TestWKWebViewController: UIViewController, WKNavigationDelegate, WKUIDeleg
         ///swift
 //        let obj = TKWebMethod()
 //        obj.vc = self
-        /// oc
+        /// 实现交互事件的对象，原UIWebView交互里面实现JSExport协议的对象
         let obj = TKWebMethodOC()
         obj.webView = webView
         manager = webView.tk_addUserScript(obj, forKeyedSubscript: "TKApp")
