@@ -23,15 +23,19 @@
   </style>
   <script>
     function getUserPhone() {
-        alert(TKApp.getUserPhone());
+<!--        alert(TKApp.getUserPhone());-->
+        TKApp.debuglog(TKApp.getUserPhone(123))
     }
     function showShare() {
         var param = {title: "分享标题", desc: "desc", url: "https://www.baidu.com"};
-        TKApp.showShare(JSON.stringify(param), "shareCallBack");
+        TKApp.debuglog(TKApp.showShare(JSON.stringify(param), "shareCallBack"))
     }
     function shareCallBack(flag) {
         alert("分享" + flag);
     }
+  function showToast() {
+      TKApp.debuglog(TKApp.showToast("WANG", 4))
+  }
 
   </script>
 </head>
@@ -39,6 +43,7 @@
 <body>
   <a href="javascript:getUserPhone();">获取用户手机号</a>
   <a href="javascript:showShare();">显示分享</a>
+  <a href="javascript:showToast();">显示Toast</a>
 </body>
 
 </html>

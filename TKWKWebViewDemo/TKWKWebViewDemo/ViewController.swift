@@ -46,3 +46,41 @@ class ViewController: UIViewController {
 
 }
 
+
+protocol TKTestProtocol {
+    func wang111()
+    func zhang1111()
+}
+protocol aaaaa {
+    func ccccc()
+}
+
+@objcMembers
+class wangwang: NSObject, TKTestProtocol {
+    override init() {
+        super.init()
+        adc()
+    }
+    static func dddddddddd() {
+        
+    }
+    func adc() {
+        
+    }
+    func wang() {
+        
+    }
+    func zhang() {
+        
+    }
+    
+    func wang111() {
+        
+    }
+    func zhang1111() {
+        
+    }
+    func ccccc(_ a: Int, b: String) {
+        
+    }
+}

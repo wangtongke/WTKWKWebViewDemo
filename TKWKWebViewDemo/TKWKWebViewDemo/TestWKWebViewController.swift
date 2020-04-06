@@ -12,25 +12,32 @@ import WebKit
 class TestWKWebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate  {
 
     var webView: WKWebView!
-    lazy var jsManager: TKWebMethodManager = {
-        let m = TKWebMethodManager()
+    lazy var jsManager: TKWebMethod = {
+        let m = TKWebMethod()
         return m
     }()
+    
+    var manager: TKJSMethodManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadWebView()
         jsManager.vc = self
+        
+        
     }
     
     func loadWebView() {
         
         let configuration = WKWebViewConfiguration()
-        // 添加TKApp替代方法
-        let tkapp = WKUserScript.init(source: getJSString(), injectionTime: WKUserScriptInjectionTime.atDocumentStart, forMainFrameOnly: false)
-        // 添加js调用
-        configuration.userContentController.addUserScript(tkapp)
         webView = WKWebView(frame: self.view.frame, configuration: configuration)
+        ///swift
+//        let obj = TKWebMethod()
+//        obj.vc = self
+        /// oc
+        let obj = TKWebMethodOC()
+        obj.webView = webView
+        manager = webView.tk_addUserScript(obj, forKeyedSubscript: "TKApp")
         webView.uiDelegate = self
         webView.navigationDelegate = self
         self.view.addSubview(webView)
@@ -63,7 +70,8 @@ class TestWKWebViewController: UIViewController, WKNavigationDelegate, WKUIDeleg
 extension TestWKWebViewController {
     
     func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
-        jsManager.exeMethod(prompt, callback: defaultText, completionHandler: completionHandler)
+//        jsManager.exeMethod(prompt, callback: defaultText, completionHandler: completionHandler)
+        manager?.exeMethod(withPrompt: prompt, defaultText: defaultText, completionHandler: completionHandler)
     }
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
         let alert = UIAlertController.init(title: "", message: message, preferredStyle: .alert)

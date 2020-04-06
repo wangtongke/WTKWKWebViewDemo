@@ -55,6 +55,7 @@ class TestUIWebViewController: UIViewController, UIWebViewDelegate {
 @objc protocol WebViewJSExports : JSExport {
     func getUserPhone() -> String
     func showShare(_ param: JSValue, _ callBack: JSValue)
+    func debuglog(_ str: String)
 }
 
 @objc class WebViewJSInstance: NSObject, WebViewJSExports {
@@ -82,6 +83,10 @@ class TestUIWebViewController: UIViewController, UIWebViewDelegate {
             self.vc?.present(alert, animated: true, completion: nil)
         }
         
+    }
+    
+    func debuglog(_ str: String) {
+        debugPrint(str)
     }
 }
 

@@ -8,3 +8,6 @@ var TKApp = {
         window.prompt("showShare", JSON.stringify(data))
     }
 }
+TKApp.setAMapKey = function(data) {
+    window.prompt("setAMapKey", data);
+};
