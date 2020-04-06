@@ -12,19 +12,12 @@ import WebKit
 class TestWKWebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate  {
 
     var webView: WKWebView!
-    lazy var jsManager: TKWebMethod = {
-        let m = TKWebMethod()
-        return m
-    }()
     
     var manager: TKJSMethodManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadWebView()
-        jsManager.vc = self
-        
-        
     }
     
     func loadWebView() {
@@ -70,7 +63,6 @@ class TestWKWebViewController: UIViewController, WKNavigationDelegate, WKUIDeleg
 extension TestWKWebViewController {
     
     func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
-//        jsManager.exeMethod(prompt, callback: defaultText, completionHandler: completionHandler)
         manager?.exeMethod(withPrompt: prompt, defaultText: defaultText, completionHandler: completionHandler)
     }
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
