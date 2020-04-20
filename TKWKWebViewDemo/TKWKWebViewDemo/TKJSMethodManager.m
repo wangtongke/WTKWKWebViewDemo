@@ -31,7 +31,7 @@
         arr = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
     }
     NSString *methodName = prompt;
-    SEL ssel = [self isExeSEL:methodName param:arr];
+    SEL ssel = [self createSEL:methodName param:arr];
     if (!ssel) {
         // 不能执行此方法
         completionHandler(@"");
@@ -44,7 +44,7 @@
     completionHandler([NSString stringWithFormat:@"%@", result]);
 }
 
-- (SEL)isExeSEL:(NSString *)methodName param:(NSArray *)arr {
+- (SEL)createSEL:(NSString *)methodName param:(NSArray *)arr {
     SEL ssel = NSSelectorFromString(methodName);
     if (![self.impObj respondsToSelector:(ssel)]) {
         NSString *cacheName = _methodList[methodName];
@@ -63,6 +63,7 @@
     if (signature == nil) {
         NSLog(@"调用该方法异常");
         //可以抛出异常也可以不操作。
+        return nil;
     }
     // NSInvocation : 利用一个NSInvocation对象包装一次方法调用（方法调用者、方法名、方法参数、方法返回值）
     NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
