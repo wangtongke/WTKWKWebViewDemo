@@ -28,8 +28,8 @@ class TestWKWebViewController: UIViewController, WKNavigationDelegate, WKUIDeleg
 //        let obj = TKWebMethod()
 //        obj.vc = self
         /// 实现交互事件的对象，原UIWebView交互里面实现JSExport协议的对象
-        let obj = TKWebMethodOC()
-        obj.webView = webView
+        let obj = TKWebMethod()
+//        obj.webView = webView
         manager = webView.tk_addUserScript(obj, forKeyedSubscript: "TKApp")
         webView.uiDelegate = self
         webView.navigationDelegate = self
@@ -39,7 +39,11 @@ class TestWKWebViewController: UIViewController, WKNavigationDelegate, WKUIDeleg
         let path = Bundle.main.path(forResource: "test", ofType: "html") ?? ""
         if let r = URL.init(string: path, relativeTo: URL.init(fileURLWithPath: Bundle.main.bundlePath)) {
             let request = URLRequest(url: r)
-            self.webView.load(request)
+//            self.webView.load(request)
+        }
+        
+        if let url = URL.init(string: "https://csapp.uniplanet.cn/doorService/#/index") {
+            self.webView.load(URLRequest.init(url: url))
         }
     }
     /// 获取要注入js事件

@@ -52,6 +52,8 @@
         if ([self.impObj respondsToSelector:(ssel)]) {
             return ssel;
         }
+    } else {
+        return ssel;
     }
     return nil;
 }
@@ -85,6 +87,7 @@
         NSString *returnType = [[NSString alloc]initWithCString:signature.methodReturnType encoding:NSUTF8StringEncoding];
         returnValue = [self getResultFor:invocation type:returnType];
     }
+    
     return returnValue;
 }
 -(void)setArgument:(NSInvocation *)invocation index: (NSInteger)index type: (NSArray *)arr{

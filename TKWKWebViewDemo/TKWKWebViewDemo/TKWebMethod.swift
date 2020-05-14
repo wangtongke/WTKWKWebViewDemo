@@ -15,7 +15,7 @@ class TKWebMethod: NSObject {
         return "110119"
     }
     
-    func showShare(_ param: String, _ callStr: String) -> CGFloat {
+    func showShare(_ param: String, _ callStr: String) -> String {
         DispatchQueue.main.async {
             let ac1 = UIAlertAction.init(title: "取消", style: .cancel) { [weak self] (ac) in
                 self?.vc?.webView?.evaluateJavaScript(callStr + "(false)", completionHandler: nil)
@@ -28,7 +28,7 @@ class TKWebMethod: NSObject {
             alert.addAction(ac2)
             self.vc?.present(alert, animated: true, completion: nil)
         }
-        return 0.1
+        return "123"
     }
     
     func showToast(_ msg: String, _ duration: String) -> Int {
